@@ -1,0 +1,32 @@
+A pothole is defined as a bowl-shaped depression in the pavement surface, and its minimum plan dimension is 150?mm 
+Existing methods for pothole detection can be divided into vibration-based methods, three-dimensional (3D) reconstruction-based methods, and vision-based methods
+The proposed method can be divided into three steps:  segmentation,  candidate region extraction, and  decision histogram used for extracting dark regions for pothole detection 
+candidate regions decision is made whether candidate regions are potholes or not by comparing pothole and background features.
+The segmentation step is to separate a pothole region from the background region by transforming an original color image into a binary image using the histogram of an input image. 
+HST (Histogram Shape-Based Thresholding), maximum entropy, and Otsu [28] can be used for this transformation into a binary image.The candidate step involves extracting a pothole 
+candidate region from a binary image obtained in the segmentation step. First, the median filter is used to remove noise such as cracks and spots. , , and  filters were tested and 
+the  filter showed the best performance among the three filters.
+Next, the damaged outlines of object regions are restored, and small pieces are removed using the closing operation (dilation and erosion) of a morphology filter. A square () 
+type of the structure element was used for the closing operation.
+After the closing operation, candidate regions are extracted using features such as size, compactness, ellipticity, and linearity, as shown inwhere : the value of region  for the
+ candidate in the image, : the size of region  in the image after the closing operation, : the compactness of region  in the image after the closing operation, : the threshold
+ for size, and : the threshold for compactness.
+total number of pixels in the region  which depends on a size of a pothole,Incomplete candidate regions are refined using the convex hull operation according to the decision 
+ofwhere : the value of refined region  for the candidate in the image, : the value of region for the candidate in the image, : the center position of region , : the compactness 
+of region  in the image, and : the threshold for compactness.
+Next, MHST (modified HST) separates not only the pothole region but also a bright region, such as a lane marking, from the background region.
+The decision step involves deciding whether the refined candidate regions are potholes or not after the comparison of candidate regions with the background region using features
+ such as standard deviation and histogram.
+if the standard deviation of the refined candidate region is smaller than the threshold for standard deviation  or if OHI of the pixels between the refined candidate region and
+ the background region is close to 1 and the OHI of values using the Sobel operation [30] is close to 1, it is decided that the refined candidate region is not a pothole because 
+it is similar to the background region
+Two-dimensional images with a pothole and without a pothole extracted from the collected pothole database (a total of 150 video clips) were used to compare the performance of 
+the proposed method with that of the existing method [20] by several conditions such as road, recording, and brightness conditions.
+To collect video data of potholes, the newly developed optical device (resolution 1280 × 720, 60?f/s) were mounted at the height of a rear-view mirror of a survey vehicle, and
+ they recorded the road surfaces ahead during movement.
+The proposed pothole detection method was implemented in Microsoft Visual C++ 6.0. The image processing was performed on a laptop (Intel Core i5-4210U, 2.4?GHz, 8?GB RAM).TP, 
+correctly detected as a pothole), false positives (FP, wrongly detected as a pothole), true negatives (TN, correctly detected as a nonpothole), and false negatives (FN, wrongly 
+detected as a nonpothole) [19] was counted manually. Also, accuracy, precision, and recall using the proposed method and the existing method were calculated as measurements for 
+validation:(1)accuracy: the average correctness of a classification process - (TP + TN)/(TP + FP + TN + FN),(2)precision: the ratio of correctly detected potholes to the total 
+number of detected potholes - TP/(TP + FP),(3)recall: the ratio of correctly detected potholes to actual potholes - TP/(TP + FN).
+overall accuracy of 73.5%, with 80.0% precision and 73.3% recall. 

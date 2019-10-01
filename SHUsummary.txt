@@ -1,0 +1,41 @@
+1)AN AUTOMATIC ROAD DISTRESS VISUAL INSPECTION SYSTEM USING AN ONBOARD IN-CAR CAMERA
+(Thitirat Siriborvornratanakul
+Graduate School of Applied Statistics, National Institute of Development Administration (NIDA), 118 Seri Thai Rd., Bangkapi, Bangkok, Thailand)
+
+SUMMARY:-The goal of this project is to study and develop a low cost,easy to use,nondestructive automatic road inspection system.
+         They have considered 3 main characteristics while detection & classification of road distress
+         -i)Dimension ii) On surface pattern iii)On surface location and orientation .
+         They used image-based pothole detection algorithm which consists of following steps-1)Preprocessing 2) Detecting 3) Grouping,clustering.
+         But this detection algorithm still includes false alarms which can be improved.
+
+
+2)ASPHALT PAVEMENT POTHOLE DETECTION AND SEGMENTATION BASED ON WAVELET ENERGY FIELD.
+(Asphalt Pavement Pothole Detection and Segmentation Based on Wavelet Energy Field
+Penghui Wang, Yongbiao Hu, Yong Dai, and Mingrui Tian)
+
+National Engineering Laboratory for Highway Maintenance Equipment, Chang’an University, Xi’an, China
+
+SUMMARY:-In this paper,a pothole detection & segmentation method based on wavelet energy field is proposed.
+        (This is unlike automatic pothole detection methods ie 3 D reconstruction & 2 D vision based methods which are expensive).
+		The wavelet energy field effectively integrates the grayscale & texture information together,which can accurately detect pavement pothole.
+		This is a vibrational based method .The method has been implemented in a MATLAB prototype & achieves high detection & segmentation accuracy.
+		Pothole detection steps :-1)Wavelet decomposition 2)Wavelet coefficient modules calculation 3)Construct wavelet energy field 
+		4)Morphological & geometric judgement.
+		Pothole Segmentation steps:-1)Construct Markov Random field model 2)Pothole segmentation 3)Morphological processing 4) Edge extraction 
+		This method is very accurate still false detection exists.
+
+3)Image based pothole detection system for ITS Service and Road Management System 
+(Image-Based Pothole Detection System for ITS Service and Road Management System
+Seung-Ki Ryu,1 Taehyeong Kim,1 and Young-Ro Kim2
+1Highway and Transportation Research Institute, Korea Institute of Civil Engineering and Building Technology, 283 Goyangdae-ro, Ilsanseo-gu, Goyang-si 411-712, Republic of Korea
+2Department of Computer Science and Information, Myongji College, Seoul 120-848, Republic of Korea)
+ 
+
+SUMMARY:-In this study ,a pothole detection method based on two-dimensional(2D)images is proposed for improving the existing method 
+		 and designing a pothole detection system to be applied to Intelligent Transportation System (ITS) service and road management system.
+		 For experiemnts,2D road images that were collected by a survey vehicle in korea were used.A 2D image based approach has been focused only on pothole 
+		 detection and is limited to a frame ,so it cannot determine the magnitude of potholes for assessment.The proposed method can be divided into three steps
+		 1)Segmentation 2)Candidate region extraction 3)Decision .This method has an overall accuracy of 73.5%.There are some limitation in this method.Potholes may be falsely detected according to the 
+		 type of shadow and various shapes of potholes.Thus in order to more accurately detect potholes,it is necessary to use images from not only a single sensor 
+		 but also additional sensors .
+		
